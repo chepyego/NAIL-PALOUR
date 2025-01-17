@@ -19,3 +19,15 @@ body{
     background-position: right;
     background-repeat: no-repeat;
 }
+.universal-color{
+    background-color: #f6e6d6;
+}
+.appointment-hand{
+    background-image: url('one-hand-2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    /* background-color: white; */
+
+
+}
