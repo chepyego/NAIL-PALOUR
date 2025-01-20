@@ -10,8 +10,13 @@
             <li>IG</li>
             <li>FB</li>
             <li>TIK</li>
+             <%  if authenticated? %>
+               <li class=" text-white bg-black py-1 px-3 ">BOOK NOW</li>
+               <% else %>
+                <%= link_to "Login", new_session_path unless authenticated? %>
+             <% end %>
+             <li class="text-white bg-black py-1 px-3"><%= button_to "Log out", session_path, method: :delete if authenticated? %></li>
 
-            <li class=" text-white bg-black py-1 px-3 ">BOOK NOW</li>
 
 
 
