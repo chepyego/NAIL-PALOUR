@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  resources :services
+
+    # constraints ->(request) { request.session[:user_id] && User.find_by(id: request.session[:user_id]&.admin?) } do
+    # authenticate :user, ->(u) { u.admin? } do
+    mount Avo::Engine, at: "/avo"
+  # mount Avo::Engine, at: Avo.configuration.root_path
+  # end
+
+  # end
   resource :session
   resources :passwords, param: :token
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

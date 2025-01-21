@@ -1,0 +1,20 @@
+<div id="<%= dom_id service %>">
+  <p class="my-5">
+     <%= image_tag service.image if service.image.attached? %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= service.title %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Price:</strong>
+    <%= service.price %>
+
+  </p>
+  <p>
+    <strong class="block font-medium mb-1">description:</strong>
+    <%= service.description %>
+  </p>
+
+</div>
