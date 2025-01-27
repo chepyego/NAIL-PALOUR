@@ -1,4 +1,4 @@
-class Avo::Resources::Service < Avo::BaseResource
+class Avo::Resources::Session < Avo::BaseResource
   # self.includes = []
   # self.attachments = []
   # self.search = {
@@ -7,9 +7,9 @@ class Avo::Resources::Service < Avo::BaseResource
 
   def fields
     field :id, as: :id
-    field :title, as: :text
-    field :price, as: :text
-    field :image, as: :file, is_image: true
-
+    field :user_id, as: :number
+    field :ip_address, as: :text
+    field :user_agent, as: :text
+    field :user, as: :belongs_to
   end
 end

@@ -1,13 +1,15 @@
 class ServicesController < ApplicationController
-  before_action :set_service, only: %i[ show edit update destroy ]
+  before_action :set_service, only: %i[ show ]
 
   # GET /services or /services.json
   def index
     @services = Service.all
+    # @services = Service.paginate(page: params[:page], per_page: 6).order("sort ASC")
   end
 
   # GET /services/1 or /services/1.json
   def show
+    @others = Services.paginate(page: params[:page], per_page: 4).order("sort ASC")
   end
 
   # GET /services/new

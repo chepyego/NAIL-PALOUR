@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :manicurists
   resources :services
 
     # constraints ->(request) { request.session[:user_id] && User.find_by(id: request.session[:user_id]&.admin?) } do

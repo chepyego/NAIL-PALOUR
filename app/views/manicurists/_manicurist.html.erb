@@ -1,0 +1,30 @@
+<div id="<%= dom_id manicurist %>">
+  <p class="my-5">
+    <%= image_tag @manicurist.manicurist_image if @manicurist.manicurist_image.attached?  %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">First name:</strong>
+    <%= manicurist.first_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Last name:</strong>
+    <%= manicurist.last_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Phone:</strong>
+    <%= manicurist.phone %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Experience:</strong>
+    <%= manicurist.experience %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= manicurist.user_id %>
+  </p>
+
+</div>
