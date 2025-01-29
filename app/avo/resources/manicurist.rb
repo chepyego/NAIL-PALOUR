@@ -13,6 +13,8 @@ class Avo::Resources::Manicurist < Avo::BaseResource
     field :experience, as: :text
     field :manicurist_image, as: :file, is_image: true
 
+
+
     field :user, as: :belongs_to
   end
 end
