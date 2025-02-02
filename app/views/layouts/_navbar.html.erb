@@ -11,7 +11,7 @@
             <li>FB</li>
             <li>TIK</li>
              <%  if authenticated? %>
-               <li class=" text-white bg-black py-1 px-3 ">BOOK NOW</li>
+              <li><%= link_to 'BOOK NOW', new_booking_path, class:" text-white bg-black py-1 px-3 "%></li>
                <% else %>
                 <%= link_to "Login", new_session_path unless authenticated? %>
              <% end %>

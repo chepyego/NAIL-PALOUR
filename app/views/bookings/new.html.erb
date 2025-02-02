@@ -1,0 +1,15 @@
+<%= form_with model: @booking do |form| %>
+
+ <div>
+    <%= form.label :service_id, "Select a service" %>
+    <%= form.collection_select :service_id, Service.all, :id, :title %>
+ </div>
+
+ <div>
+    <%= form.label :date, "select Date and time" %>
+    <%= form.datetime_select :date %>
+    
+ </div>
+ <%= form.submit "Book Now" %>
+
+<% end  %>

@@ -9,9 +9,10 @@ class Avo::Resources::User < Avo::BaseResource
     field :id, as: :id
     field :email_address, as: :text
     field :sessions, as: :has_many
-    field :password, as: :password, hide_on:[:index,:show]
-    field :password_confirmation, as: :password, hide_on: [:index, :show]
+    field :password, as: :password, hide_on: [ :index, :show ]
+    field :password_confirmation, as: :password, hide_on: [ :index, :show ]
     field :image, as: :file, is_image: true
+    field :bookings, as: :has_many
   end
   # grid do
   #   email_address :email_address, as: :text

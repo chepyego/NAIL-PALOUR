@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :clients
   resources :manicurists
   resources :services
+  resources :bookings
 
     # constraints ->(request) { request.session[:user_id] && User.find_by(id: request.session[:user_id]&.admin?) } do
     # authenticate :user, ->(u) { u.admin? } do
