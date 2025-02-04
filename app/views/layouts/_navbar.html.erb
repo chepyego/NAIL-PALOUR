@@ -2,19 +2,19 @@
     <ul class=" text-gray-600 text-lg font-light flex justify-center gap-10">
             <h1 class="absolute left-10">Logo</h1>
 
-        <li>HOME</li>
-        <li>AbOUT</li>
+        <li class="hover:bg-red-300"><%= link_to'HOME', root_path %></li>
+        <li>ABOUT</li>
         <li>PAGES</li>
-        <li>PORTFOLIO</li>
+        <li><%= link_to 'SERVICES', services_path %></li>
         <li>CONTACT US</li>
             <li>IG</li>
             <li>FB</li>
             <li>TIK</li>
-             <%  if authenticated? %>
+             <%# <%  if authenticated? %> %>
               <li><%= link_to 'BOOK NOW', new_booking_path, class:" text-white bg-black py-1 px-3 "%></li>
-               <% else %>
+               <%# <% else %> %>
                 <%= link_to "Login", new_session_path unless authenticated? %>
-             <% end %>
+             <%# <% end %> %>
              <li class="text-white bg-black py-1 px-3"><%= button_to "Log out", session_path, method: :delete if authenticated? %></li>
 
 

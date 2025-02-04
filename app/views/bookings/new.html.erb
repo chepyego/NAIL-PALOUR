@@ -1,5 +1,22 @@
 <%= form_with model: @booking do |form| %>
 
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+
+  </div>
+  <div>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+
+  </div>
+
+  <div>
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number %>
+
+  </div>
+
  <div>
     <%= form.label :service_id, "Select a service" %>
     <%= form.collection_select :service_id, Service.all, :id, :title %>

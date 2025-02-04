@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
 
   before_action :debug_session
-  before_action :authenticate_admin!
+  # before_action :authenticate_admin!
 
 
 

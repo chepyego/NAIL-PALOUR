@@ -1,6 +1,6 @@
-<div id="<%= dom_id service %>">
+<div class="flex justify-center"id="<%= dom_id service %>">
   <p class="my-5">
-     <%= image_tag service.image if service.image.attached? %>
+     <%= image_tag service.image.variant(resize_to_limit: [300, 300]) if service.image.attached? %>
   </p>
   <p class="my-5">
     <strong class="block font-medium mb-1">Title:</strong>
