@@ -10,6 +10,9 @@ class Avo::Resources::Booking < Avo::BaseResource
     field :user, as: :belongs_to
     field :service, as: :belongs_to
     field :date, as: :date_time
+    field :name, as: :text
+    field :email, as: :text
+    field :phone_number, as: :text
     field :status, as: :select, options: { pending: "Pending", confirmed: "Confirmed", completed: "Completed" }
   end
 end

@@ -1,7 +1,9 @@
 class BookingsController < ApplicationController
-  include Authentication
+  # include Authentication
 
-  before_action :user_login
+  # before_action :user_login
+  allow_unauthenticated_access only: %i[ new index create destroy ]
+
 
   def new
     @booking = Booking.new

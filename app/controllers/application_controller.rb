@@ -1,10 +1,11 @@
 class ApplicationController < ActionController::Base
   # before_action :authenticated?
   # before_action :authenticate_user!, only: [ :new, :create, :edit ]
-  # allow_unauthenticated_access only: %i[ index show ]
+  #  allow_unauthenticated_access only: %i[ index show ]
 
 
   before_action :debug_session
+  # before_action :set_current_user
   # before_action :authenticate_admin!
 
 
@@ -24,7 +25,7 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    def current_user
+    def set_current_user
       @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
     end
 end

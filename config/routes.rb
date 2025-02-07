@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
     # constraints ->(request) { request.session[:user_id] && User.find_by(id: request.session[:user_id]&.admin?) } do
     # authenticate :user, ->(u) { u.admin? } do
+
     mount Avo::Engine, at: "/avo"
   # mount Avo::Engine, at: Avo.configuration.root_path
   # end

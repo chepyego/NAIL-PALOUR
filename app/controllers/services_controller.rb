@@ -1,5 +1,7 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: %i[ show ]
+  allow_unauthenticated_access only: %i[ index show ]
+
 
   # GET /services or /services.json
   def index
