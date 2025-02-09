@@ -1,5 +1,6 @@
-<div class="  bg-white rounded-md md:w-2/3 w-full mx-20 h-full py-20">
-  <% if alert = flash[:alert] %>
+<div class=" flex justify-center bg-white rounded-lg md:w-2/3 gap-10 mx-auto w-full  h-full py-20">
+  <div>
+     <% if alert = flash[:alert] %>
     <p class="py-2 px-3 bg-red-50 mb-5 text-red-500 font-medium rounded-lg inline-block" id="alert"><%= alert %></p>
   <% end %>
 
@@ -7,10 +8,10 @@
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
-  <h1 class="font-bold text-3xl mb-2 mt-2 m-2 px-10 ">Welcome back</h1>
-  <p class="mt-2 mb-4 m-2 px-10">Today is a new day.its your day.You shape it .<br> Sign in to start managing your projects</p>
+  <h1 class="font-bold text-3xl mb-2 mt-2 m-2  ">Welcome back</h1>
+  <p class="mt-2 mb-4 m-2 ">Today is a new day.its your day.You shape it .<br> Sign in to start managing your projects</p>
 
-  <%= form_with url: session_url, class: " m-2 px-10  " do |form| %>
+  <%= form_with url: session_url, class: " m-2   " do |form| %>
     <div class="my-5 mt-2">
       <%= form.label :email %><br>
       <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address], class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-80" %>
@@ -32,7 +33,7 @@
       </div>
 
     </div>
-    <p class="mt-4 mb-2">or </p><br>
+    <p class="mt-4 mb-2 text-center"><span class="underline"></span>or </p><br>
     <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
       <div class="inline">
          <button class="w-80 rounded-lg py-3 px-8 mt-2 bg-red-500 text-white inline-block font-medium cursor-pointer">Sign in with Google</button><br>
@@ -45,4 +46,13 @@
     </div>
     <p class="mt-2"> Dont you have an account? <span class="text-blue-400">Sign up</span><p> 
   <% end %>
+
+
+
+  </div>
+  
+  <div class=" w-96 h-full m-2 ">
+    <%= image_tag("login1.jpg", :alt => "login flower",  :class=>" image rounded-md  ") %>
+  
+  </div>
 </div>
