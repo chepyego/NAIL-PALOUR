@@ -23,11 +23,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="">
+  <body class=" p-0 m-0">
     <%= render 'layouts/navbar' %>
     
     <%# <%= render 'layouts/home' %> 
         <%= yield %>
+        <%= render 'layouts/footer' %>
 
   </body>
 </html>
