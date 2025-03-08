@@ -75,7 +75,7 @@
             <li class="universal-color  h-fit w-fit p-10 "> 
                 <h1 class="text-4xl text-gray-800 mb-2">Lets Book Now! </h1>
                 <p>Book your appointment with us today!,join us <br>to help you with your nail journey</p>
-                <button class="bg-black text-white px-8 py-3 mt-4">Book An appointment </button>
+                <button class="bg-black text-white px-8 py-3 mt-4"><%= link_to 'Book An appointment', new_booking_path %></button>
                 <%= image_tag("one-hand-2.png", alt:"one hand art") %>
             </li>
             <li class="  ">
@@ -113,26 +113,49 @@
     </div>
     <div class="mt-4 py-10">
     </div>
-    <div class=" flex justify-center gap-10 prices">
+    <div class=" universal-color py-20 flex justify-center gap-10 prices">
      <%= image_tag("nail-art.jpg", alt:"manicure hand", class:"h-80 w-64") %>
      <div>
-        <h1 class="text-4xl font-semibold">Pricing For Manicure</h1>
-        <p>Our skilled and experienced to providing exceptional Medicaure services the beautify of your feet
+        <h1 class="text-4xl font-semibold text-gray-800">Pricing For Manicure</h1>
+        <p class="mt-2 mb-2">Our skilled and experienced to providing exceptional Medicaure <br>services the beautify of your feet
 
-        <H3>Basic Manicure ........ksh 1500</H3>
+        <H3 class="text-lg font-medium text-gray-800">Basic Manicure ........................ksh 1500</H3>
         <p>A buffer is used to smooth the surface of the nails</p>
 
-        <h3>Glue Manicure........ksh 2000</h3> 
+        <h3 class="text-lg font-medium text-gray-800 mt-2 mb-2">Glue Manicure....................ksh 2000</h3> 
         <p>The nails are shaped and filled to the desired length and shape</p> 
 
-        <H3>French Manicure......ksh 4000</h3>
+        <H3 class="text-lg font-medium text-gray-800 mt-2 mb-2">French Manicure...............ksh 4000</h3>
         <P>he nails are cleaned, is removed to create a clean surface</p>
 
-        <h3>Gel of manicure.....ksh 3500</h3>
+        <h3 class="text-lg font-medium text-gray-800 mt-2 mb-2">Gel of manicure..................ksh 3500</h3>
         <p>Providing a smooth surface for the gel polish with adhesion</p>
 
-        <button class="bg-black py-3 px-5 text-white">Book Now</button>
+        <button class="bg-black py-3 px-5 text-white mt-4"><%= link_to 'BOOK NOW', new_booking_path%></button>
+     </div>
+
+
     </div>
+    <div class=" universal-color py-20 flex justify-center gap-10 prices">
+     <div>
+        <h1 class="text-4xl font-semibold text-gray-800">Pricing For Pedicure</h1>
+        <p class="mt-2 mb-2">Our skilled and experienced to providing exceptional Pedicure <br>services the beautify of your feet
+
+        <H3 class="text-lg font-medium text-gray-800">Regular Pedicure ........................ksh 1500</H3>
+        <p>Your feet are immersed in a warm foot bath infused</p>
+
+        <h3 class="text-lg font-medium text-gray-800 mt-2 mb-2">Spa Pedicure....................ksh 2000</h3> 
+        <p>The spa pedicure creates a serene and tranguil enviroment</p> 
+
+        <H3 class="text-lg font-medium text-gray-800 mt-2 mb-2">French Pedicure...............ksh 4000</h3>
+        <P>Begin with relaxing foot soak to soften the skin for treatment</p>
+
+        <h3 class="text-lg font-medium text-gray-800 mt-2 mb-2">Herbal Pedicure..................ksh 3500</h3>
+        <p>The feet are immersed in a warm herbal soal infused</p>
+
+        <button class="bg-black py-3 px-5 text-white mt-4"><%= link_to 'BOOK NOW', new_booking_path%></button>
+     </div>
+        <%= image_tag("pedicure.jpg", alt:"pedicure leg", class:" image w-64") %>
 
 
 
