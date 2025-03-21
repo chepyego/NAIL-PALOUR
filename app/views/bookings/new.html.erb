@@ -1,34 +1,42 @@
+<div class="bg-white rounded-lg ">
 
-<h1 class="text-center">Make your bookings</h1>
-<%= form_with model: @booking do |form| %>
+    <%= image_tag 'book.jpg' %>
+  <h1 class="text-center mt-2 pt-2 text-2xl font-medium text-gray-900">  Make your bookings</h1>
+  <p class="text-center mt-2 font-medium">We are the best nail technician <br>in town let us work on your nails</p>
+  <div class="p-10">
+    <%= form_with model: @booking do |form| %>
 
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+      <div>
+        <%= form.label :name %><br>
+        <%= form.text_field :name, class:"block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-80" %>
+      </div>
 
-  </div>
-  <div>
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+      
+      <div class="mt-4">
+        <%= form.label :email %><br>
+        <%= form.text_field :email, class:"block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-80" %>
 
-  </div>
+      </div>
 
-  <div>
-    <%= form.label :phone_number %>
-    <%= form.text_field :phone_number %>
+      <div class="mt-4">
+        <%= form.label :phone_number %>
+        <%= form.text_field :phone_number, class:"block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-80" %>
 
-  </div>
+      </div>
 
- <div>
-    <%= form.label :service_id, "Select a service" %>
-    <%= form.collection_select :service_id, Service.all, :id, :title %>
- </div>
+    <div class="mt-4">
+        <%= form.label :service_id, "Select a service" %>
+        <%= form.collection_select :service_id, Service.all, :id, :title, class:"rounded-md" %>
+    </div>
 
- <div>
-    <%= form.label :date, "select Date and time" %>
-    <%= form.datetime_select :date %>
-    
- </div>
- <%= form.submit "Book Now" %>
+    <div class="mt-4 mb-4">
+        <%= form.label :date, "select Date and time" %>
+        <%= form.datetime_select :date %>
+        
+    </div>
+    <%= form.submit "Book Now" , class:"w-80 rounded-lg py-3 px-8 mt-2 bg-black text-white inline-block font-medium cursor-pointer "%>
 
-<% end  %>
+    <% end  %>
+</div>
+
+</div>

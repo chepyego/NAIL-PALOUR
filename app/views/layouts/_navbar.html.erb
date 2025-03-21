@@ -52,7 +52,7 @@
     </ul>
 </div>
 
-<div class=" mobile navigation mx-auto">
+<div class=" mobile navigation mx-auto p-10">
 
   <div class="hidden">
        <%= 
@@ -66,10 +66,11 @@
         ] %>
   </div>
   
+    <h1 class="absolute left-8 top-3 "><%= image_tag "LOGO3.png", class:" h-24 w-24 " %></h1>
 
-   <%= select_tag nil, options_for_select(items, request.path), class: "sm:hidden  w-64 flex justify-center", onChange: "Turbo.visit(this.selectedOptions[0].value)" %>
+   <%= select_tag nil, options_for_select(items, request.path), class: "sm:hidden  mt-8 w-80 mx-10", onChange: "Turbo.visit(this.selectedOptions[0].value)" %>
 
-  <ul class="sm:hidden">
+  <ul class="hidden sm:block">
       <% items.each do |text,path| %>
           <li><%=  link_to text, path %></li>
 
