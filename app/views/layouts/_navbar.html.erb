@@ -51,21 +51,36 @@
 
     </ul>
 </div>
-<div class=" md:hidden mobile navigation left-0">
-  <ul class="text-gray-600 text-lg font-light">
 
-       <li class="hover:bg-red-300"><%= link_to'HOME', root_path %></li>
-        <li>ABOUT</li>
-        <li>PAGES</li>
-        <li><%= link_to 'SERVICES', services_path %></li>
-        <li>CONTACT US</li>
-        <li>IG</li>
-        <li>FB</li>
-        <li>TIK</li>
-        <li><%= link_to 'BOOK NOW', new_booking_path, class:" text-white bg-black py-2 px-8 "%></li>
-        <%= link_to "Login", new_session_path unless authenticated? %>
-        <li class="text-white bg-red-500 py-1 px-3"><%= button_to "Log out", session_path, method: :delete if authenticated? %></li>
+<div class=" mobile navigation mx-auto">
+
+  <div class="hidden">
+       <%= 
+            items = [
+              ["home",root_path],
+              ["CONTACT US"],
+              ['BOOK NOW', new_booking_path],
+              ['login',new_session_path]
+  
+  
+        ] %>
+  </div>
+  
+
+   <%= select_tag nil, options_for_select(items, request.path), class: "sm:hidden  w-48", onChange: "Turbo.visit(this.selectedOptions[0].value)" %>
+
+  <ul class="sm:hidden">
+      <% items.each do |text,path| %>
+          <li><%=  link_to text, path %></li>
+
+        <% end %>
 
   </ul>
 
+   
+
+
+
+
 </div>
+
