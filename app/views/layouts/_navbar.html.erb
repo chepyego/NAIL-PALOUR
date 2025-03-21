@@ -67,7 +67,7 @@
   </div>
   
 
-   <%= select_tag nil, options_for_select(items, request.path), class: "sm:hidden  w-48", onChange: "Turbo.visit(this.selectedOptions[0].value)" %>
+   <%= select_tag nil, options_for_select(items, request.path), class: "sm:hidden  w-64 flex justify-center", onChange: "Turbo.visit(this.selectedOptions[0].value)" %>
 
   <ul class="sm:hidden">
       <% items.each do |text,path| %>
