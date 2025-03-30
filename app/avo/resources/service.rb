@@ -10,6 +10,5 @@ class Avo::Resources::Service < Avo::BaseResource
     field :title, as: :text
     field :price, as: :text
     field :image, as: :file, is_image: true
-
   end
 end

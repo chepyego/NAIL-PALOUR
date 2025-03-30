@@ -52,9 +52,9 @@
     </ul>
 </div>
 
-<div class=" mobile navigation mx-auto p-10">
+<div class=" mobile navigation mx-auto py-6">
 
-  <div class="hidden">
+  <div class="hidden sm:hidden">
        <%= 
             items = [
               ["home",root_path],
@@ -68,9 +68,9 @@
   
     <h1 class="absolute left-8 top-3 "><%= image_tag "LOGO3.png", class:" h-24 w-24 " %></h1>
 
-   <%= select_tag nil, options_for_select(items, request.path), class: "sm:hidden  mt-8 w-80 mx-10", onChange: "Turbo.visit(this.selectedOptions[0].value)" %>
+   <%= select_tag nil, options_for_select(items, request.path), class: "sm:hidden  mt-8 w-80 ", onChange: "Turbo.visit(this.selectedOptions[0].value)" %>
 
-  <ul class="hidden sm:block">
+  <ul class="hidden ">
       <% items.each do |text,path| %>
           <li><%=  link_to text, path %></li>
 
