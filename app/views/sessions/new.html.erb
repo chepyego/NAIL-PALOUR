@@ -1,4 +1,5 @@
-<div class=" flex justify-center bg-white rounded-lg md:w-2/3 gap-10 mx-auto w-full  h-full py-20">
+<%# <div class=" flex justify-center bg-white rounded-lg md:w-2/3 gap-10 mx-auto w-full  h-full py-20"> %>
+<div class="relative bg-white flex flex-col lg:flex-row items-center justify-center gap-10 max-w-5xl mx-auto px-6 py-10 mb-8">  
   <div>
      <% if alert = flash[:alert] %>
     <p class="py-2 px-3 bg-red-50 mb-5 text-red-500 font-medium rounded-lg inline-block" id="alert"><%= alert %></p>
@@ -8,18 +9,18 @@
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
-  <h1 class="font-bold text-3xl mb-2 mt-2 m-2  ">Welcome back</h1>
-  <p class="mt-2 mb-4 m-2 ">Today is a new day.its your day.You shape it .<br> Sign in to start managing your projects</p>
+  <h1 class="font-bold md:text-3xl text-2xl text-gray-900 mb-2 mt-2 m-2  ">Welcome back</h1>
+  <p class="mt-2 mb-4 m-2 text-gray-900 ">Today is a new day.its your day.You shape it .<br> Sign in to start managing your projects</p>
 
   <%= form_with url: session_url, class: " m-2   " do |form| %>
     <div class="my-5 mt-2">
       <%= form.label :email %><br>
-      <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address], class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-80" %>
+      <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address], class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-64 md:w-80" %>
     </div>
 
     <div class="my-5 ">
       <%= form.label :password, class:"mt-2" %><br>
-      <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72, class: "block shadow rounded-lg border border-gray-400 outline-none px-3 py-2 mt-2 w-80" %>
+      <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72, class: "block shadow rounded-lg border border-gray-400 outline-none px-3 py-2 mt-2 w-64 md:w-80" %>
     </div>
 
     <div class="mt-4 text-sm text-gray-500 sm:mt-0">
@@ -28,20 +29,20 @@
 
     <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
       <div class="inline">
-        <%= form.submit "Sign in", class: " w-80 rounded-lg py-3 px-8 mt-2 bg-black text-white inline-block font-medium cursor-pointer" %><br>
+        <%= form.submit "Sign in", class: "w-64 md:w-80 rounded-lg py-3 px-8 mt-2 bg-black text-white inline-block font-medium cursor-pointer" %><br>
 
       </div>
 
     </div>
-    <p class="mt-4 mb-2 text-center"><span class="underline"></span>or </p><br>
+    <p class="mt-2 text-center"><span class="underline"></span>or </p><br>
     <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
       <div class="inline">
-         <button class="w-80 rounded-lg py-3 px-8 mt-2 bg-red-500 text-white inline-block font-medium cursor-pointer">Sign in with Google</button><br>
+         <button class="md:w-80 w-64 rounded-lg py-3 px-8  bg-red-500 text-white inline-block font-medium cursor-pointer">Sign in with Google</button><br>
       </div>
     </div>
     <div class=" mt-2 col-span-6 sm:flex sm:items-center sm:gap-4">
        <div class="inline">
-         <button class="w-80 rounded-lg py-3 px-8 mt-2 bg-blue-300 text-white inline-block font-medium cursor-pointer">Sign in with Facebook</button>
+         <button class="md:w-80 w-64 rounded-lg py-3 px-8 mt-2 bg-blue-300 text-white inline-block font-medium cursor-pointer">Sign in with Facebook</button>
       </div>
     </div>
     <p class="mt-2"> Dont you have an account? <span class="text-blue-400">Sign up</span><p> 
@@ -51,8 +52,8 @@
 
   </div>
   
-  <div class=" w-96 h-full m-2 ">
-    <%= image_tag("login1.jpg", :alt => "login flower",  :class=>" image rounded-md  ") %>
+  <div class=" w-96 h-full  m-2 ">
+    <%= image_tag("login1.jpg", :alt => "login flower",  :class=>" image rounded-md hidden md:flex ") %>
   
   </div>
 </div>

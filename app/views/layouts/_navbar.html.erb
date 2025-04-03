@@ -1,5 +1,5 @@
 <div class=" p-10">
-    <ul class="hidden md:visible text-gray-600 text-lg font-light md:flex justify-center gap-10">
+    <ul class="hidden md:visible text-gray-600 text-lg font-light md:flex justify-center gap-10 px-8 py-4">
             <h1 class="absolute left-10 top-3 "><%= image_tag "LOGO3.png", class:" h-24 w-24 " %></h1>
             
           <li class="md:hidden">
@@ -12,6 +12,7 @@
         <li class="hover:bg-red-300">PAGES</li>
         <li class="hover:bg-red-300"><%= link_to 'SERVICES', services_path %></li>
         <li class="hover:bg-red-300">CONTACT US</li>
+          <div class="flex items-center gap-10"> 
             <li class="hover:bg-red-300"><!-- Instagram -->
                 <a href="https://www.instagram.com" target="_blank">
                     <svg class="w-4 h-4 text-pink-500 hover:bg-pink-600" fill="currentColor" viewBox="0 0 24 24">
@@ -35,9 +36,10 @@
              </a>
 
             </li>
-              <li><%= link_to 'BOOK NOW', new_booking_path, class:" text-white bg-black py-2 px-8 hover:bg-red-300"%></li>
+          </div>  
+              <li><%= link_to 'BOOK NOW', new_booking_path, class:" bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-lg shadow-lg transition-all"%></li>
                 <%= link_to "Login ",  new_session_path unless authenticated?  %>
-             <li class="hidden text-white bg-red-500 py-1 px-3"><%= button_to "Log out", session_path, method: :delete if authenticated? %></li>
+             <li class=" text-white bg-red-500 py-1 px-3"><%= button_to "Log out", session_path, method: :delete if authenticated? %></li>
 
 
 

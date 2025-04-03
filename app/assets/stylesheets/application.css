@@ -28,8 +28,9 @@ body{
 .appointment-hand{
     background-image: url('one-hand-2.png');
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: 50%;
+    /* background-position: center; */
+    background-size: 90%;
+    background-position: cover;
     /* background-color: white; */
 
 

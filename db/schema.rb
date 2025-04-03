@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_04_222024) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_01_142138) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -50,7 +50,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_04_222024) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.integer "service_id", null: false
     t.datetime "date"
     t.string "status"

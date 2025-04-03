@@ -12,13 +12,26 @@ class BookingsController < ApplicationController
   def index
     @bookings = current_user.bookings
   end
+
+  def success
+    @booking = Booking.find(params[:id])
+  end
   def create
-    @booking = current_user.bookings.new(booking_params)
+    if current_user
+
+       @booking = current_user.bookings.new(booking_params)
+    else
+
+    @booking = Booking.new(booking_params)
+    end
 
     if @booking.save
-      redirect_to @booking, notice: "Booking was Successful"
+      flash[:notice] = "Booking was successful"
+      redirect_to success_booking_path(@booking)
+
     else
-     render :new, alert: "Something went wrong"
+      flash.now[:alert]= "something went wrong"
+      #  render :new, alert: "Something went wrong"
     end
   end
 
@@ -42,4 +55,5 @@ class BookingsController < ApplicationController
   def current_user
     @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
   end
+  helper_method :current_user  # Make available in views
 end

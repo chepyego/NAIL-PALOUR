@@ -1,42 +1,51 @@
-<div class="bg-white rounded-lg  w-96 h-fit">
+<%# <div class=" py-0 md:py-20 relative space-x-10 mb-4 p-0  md:mx-auto md:p-10 bg-white rounded-lg md:flex  w-96 md:w-2/3 h-full block  shadow-md "> %>
+<div class="mb-0 md:mb-6 relative bg-white flex flex-col lg:flex-row items-center justify-center gap-10 max-w-5xl mx-auto px-6 py-10">
 
-    <%= image_tag 'book.jpg' %>
-  <h1 class="text-center mt-2 pt-2 text-2xl font-medium text-gray-900">  Make your bookings</h1>
-  <p class="text-center mt-2 font-medium">We are the best nail technician <br>in town let us work on your nails</p>
-  <div  turbo-frame id="booking_form"class="p-10">
+
+  <div class="object-contain md:hidden w-fit h-fit image"><%= image_tag 'book.jpg' %></div>
+  <div class=" md:absolute top-5 md:left-36 left-0">  
+    <h1 class=" mt-2 pt-2 text-2xl font-medium text-gray-900">  Make your bookings</h1>
+    <p class=" mt-2 font-medium">We are the best nail technician <br>in town let us work on your nails</p>
+  </div>
+  
+  <div  turbo-frame id="booking_form"class=" md:mx-auto mt-0 md:mt-10 md:pt-16 pt-0  ">
     <%= form_with model: @booking, data: {turbo_frame: "_top" } do |form| %>
 
-      <div>
-        <%= form.label :name %><br>
-        <%= form.text_field :name, class:"block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-64 md:w-80" %>
-      </div>
-
       
-      <div class="mt-4">
-        <%= form.label :email %><br>
-        <%= form.text_field :email, class:"block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-64 md:w-80" %>
+        <div class="mt-4 md:mt-0">
+          <%= form.label :name %><br>
+          <%= form.text_field :name, class:"block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-64 md:w-80" %>
+        </div>
 
-      </div>
-
-      <div class="mt-4">
-        <%= form.label :phone_number %>
-        <%= form.text_field :phone_number, class:"block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-64 md:w-80" %>
-
-      </div>
-
-    <div class="mt-4">
-        <%= form.label :service_id, "Select a service" %>
-        <%= form.collection_select :service_id, Service.all, :id, :title, class:"rounded-md shadow w-64" %>
-    </div>
-
-    <div class="mt-4 mb-4">
-        <%= form.label :date, "select Date and time" %><br>
-        <%= form.datetime_select :date %>
         
-    </div>
-    <%= form.submit "Book Now" , class:"w-64 hover:bg-inherit md:w-80 rounded-lg py-3 px-8 mt-2 bg-black text-white inline-block font-medium cursor-pointer "%>
+        <div class="mt-4">
+          <%= form.label :email %><br>
+          <%= form.text_field :email, class:"block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-64 md:w-80" %>
 
-    <% end  %>
+        </div>
+
+        <div class="mt-4">
+          <%= form.label :phone_number %>
+          <%= form.text_field :phone_number, class:"block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-64 md:w-80" %>
+
+        </div>
+
+      <div class="mt-4">
+          <%= form.label :service_id, "Select a service" %>
+          <%= form.collection_select :service_id, Service.all, :id, :title, class:"rounded-md shadow w-64" %>
+      </div>
+
+      <div class="mt-4 mb-4">
+          <%= form.label :date, "select Date and time" %><br>
+          <%= form.datetime_select :date %>
+          
+      </div>
+        <%= form.submit "Book Now" , class:"w-64   md:w-80 rounded-lg py-3 px-8 mt-2 bg-black text-white inline-block font-medium cursor-pointer "%>
+
+  <% end %>  
 </div>
+
+  <div class=" hidden md:block object-contain image border rounded-md w-96"><%= image_tag 'book.jpg', class:"border rounded-md" %></div>
+
 
 </div>
