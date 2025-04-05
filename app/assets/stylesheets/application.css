@@ -39,3 +39,30 @@ body{
     height: 100%;
     width: 100%;
 }
+ 
+
+
+/* @media only screen and (max-width: 600px) {
+    
+    }
+} */
+
+.swiper {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .swiper-wrapper {
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+  
+  .swiper-slide {
+    flex: 0 0 100%; /* Each item takes up 100% of the carousel width */
+  }
+  
+  .swiper img {
+    width: 100%; /* Make images fill the carousel */
+    display: block;
+  }
+  
