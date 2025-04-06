@@ -9,7 +9,18 @@ import Swiper from "swiper"
 export default class extends Controller {
     connect() {
       console.log("jemimah");
-      this.swiper = new Swiper('.swiper', {
+      this.swiper = new Swiper('.swiper-container', {
+        // loop: true, // Infinite loop
+        // autoplay: {
+        //   delay: 2500, // Slide change interval (in milliseconds)
+        //   disableOnInteraction: false, // Keep autoplay running after user interaction
+        // },
+        slidesPerView: 1, // Number of slides visible at once
+        spaceBetween: 10, // Space between slides
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
         pagination: {
           el: ".swiper-pagination",
         },
@@ -17,6 +28,8 @@ export default class extends Controller {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
+        continuous: true, // Make the carousel loop continuously
+
 
       });
         

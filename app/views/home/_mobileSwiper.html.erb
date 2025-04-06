@@ -5,23 +5,23 @@
 <div class="block sm:hidden py-10 text-center">
   <div class="">
     <h2 class="md:text-4xl text-2xl font-semibold mb-4 md:mb-0  ">Unleashing Creativity:<br> A Nail Art Haven</h2>
-    <p class="p2">Enter our vibrate and inspiring space, designed to your imagination <br>and awaken your artistic spirit Feel the energy and passion that<br> radiates from our skilled nail artist, who are dedicated to turning<br> your nails dreams into reality</p>
+    <p class=" p2">Enter our vibrate and inspiring space, designed to your imagination <br>and awaken your artistic spirit Feel the energy and passion that<br> radiates from our skilled nail artist, who are dedicated to turning<br> your nails dreams into reality</p>
 
   </div>
 
 
 
- <div class=" swiper" data-controller="swiper">
-    <div class="  swiper-wrapper flex">
-        <div class="swiper-slide">
+ <div class=" flex w-full overflow-hidden swiper-container" data-controller="swiper">
+    <div class="  swiper-wrapper transition-transform flex">
+        <div class=" flex swiper-slide">
          <div>
             <%= image_tag("sample2.jpg", :alt => "nail art",  :class=>"w-64 h-96") %>
         </div>
-        <div class="swiper-slide">
+        <div class=" flex swiper-slide">
             <%= image_tag("sample1.jpg", :alt => "nail art",  :class=>"w-96 h-48") %>
         </div>
-        <div class="swiper-slide">
-            <%= image_tag("sample3.jpg", :alt => "nail art",  :class=>"w-64 h-64") %>
+        <div class=" flex swiper-slide">
+            <%= image_tag("sample3.jpg", :alt => "nail art",  :class=>" w-full") %>
         </div>
 
     </div>

@@ -9,7 +9,7 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
- @import 'swiper/swiper-bundle.min.css';
+ /* @import 'swiper/swiper-bundle.min.css'; */
 
 body{
     /* background-color: #f6e6d6 ; banner color */
