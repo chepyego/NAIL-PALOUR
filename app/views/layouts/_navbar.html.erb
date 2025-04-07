@@ -70,7 +70,7 @@
   
     <h1 class="absolute left-8 top-3 "><%= image_tag "LOGO3.png", class:" h-24 w-24 " %></h1>
 
-   <%= select_tag nil, options_for_select(items, request.path), class: "sm:hidden  mt-8 w-80 border border-4 py-2 bg-white", onChange: "Turbo.visit(this.selectedOptions[0].value)" %>
+   <%= select_tag nil, options_for_select(items, request.path), class: "sm:hidden  mt-8 w-80 border border-1 text-center py-2 bg-white", onChange: "Turbo.visit(this.selectedOptions[0].value)" %>
 
   <ul class="hidden ">
       <% items.each do |text,path| %>

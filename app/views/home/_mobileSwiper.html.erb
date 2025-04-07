@@ -11,30 +11,23 @@
 
 
 
- <div class=" flex w-full overflow-hidden swiper-container" data-controller="swiper">
-    <div class="  swiper-wrapper transition-transform flex">
-        <div class=" flex swiper-slide">
-         <div>
-            <%= image_tag("sample2.jpg", :alt => "nail art",  :class=>"w-64 h-96") %>
-        </div>
-        <div class=" flex swiper-slide">
-            <%= image_tag("sample1.jpg", :alt => "nail art",  :class=>"w-96 h-48") %>
-        </div>
-        <div class=" flex swiper-slide">
-            <%= image_tag("sample3.jpg", :alt => "nail art",  :class=>" w-full") %>
-        </div>
-
+ <div data-controller="swiper" class="swiper w-full max-w-xl mx-auto mt-8">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <%= image_tag("sample1.jpg", class: "w-full h-64 object-cover") %>
     </div>
-
-    <div class="swiper-pagination">el</div>
-    <div class=" text-sm swiper-button-next">nextEl</div>
-    <div class=" text-sm swiper-button-prev">prevEl</div>
-    
-
-    <p>Mobile swipper testing</p>
-
-    
+    <div class="swiper-slide">
+      <%= image_tag("sample2.jpg", class: "w-full h-64 object-cover") %>
+    </div>
+    <div class="swiper-slide">
+      <%= image_tag("sample3.jpg", class: "w-full h-64 object-cover") %>
+    </div>
   </div>
+  
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
 
 
 

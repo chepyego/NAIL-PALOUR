@@ -1,41 +1,24 @@
-
-
-import { Controller } from '@hotwired/stimulus';
-import Swiper from "swiper"
-
-// import Swiper from 'swiper/swiper-bundle';
-
+import { Controller } from '@hotwired/stimulus'
+// import Swiper from 'swiper'
 
 export default class extends Controller {
-    connect() {
-      console.log("jemimah");
-      this.swiper = new Swiper('.swiper-container', {
-        // loop: true, // Infinite loop
-        // autoplay: {
-        //   delay: 2500, // Slide change interval (in milliseconds)
-        //   disableOnInteraction: false, // Keep autoplay running after user interaction
-        // },
-        slidesPerView: 1, // Number of slides visible at once
-        spaceBetween: 10, // Space between slides
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        continuous: true, // Make the carousel loop continuously
-
-
-      });
-        
-         
-      
-    }
-
+  connect() {
+    this.swiper = new Swiper('.swiper', {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+    });
   }
-
+}

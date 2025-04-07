@@ -7,5 +7,4 @@ pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin "trix"
 pin "@rails/actiontext", to: "actiontext.esm.js"
-
-pin "swiper", to: "https://ga.jspm.io/npm:swiper@11.0.5/swiper.mjs"
+pin "swiper", to: "https://ga.jspm.io/npm:swiper@11.2.6/swiper-bundle.esm.js"

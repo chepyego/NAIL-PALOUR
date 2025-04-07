@@ -1,5 +1,5 @@
 <%# <div class=" py-0 md:py-20 relative space-x-10 mb-4 p-0  md:mx-auto md:p-10 bg-white rounded-lg md:flex  w-96 md:w-2/3 h-full block  shadow-md "> %>
-<div class="mb-0 md:mb-6 relative bg-white flex flex-col lg:flex-row items-center justify-center gap-10 max-w-5xl mx-auto px-6 py-10">
+<div class=" space-x-10 mb-0 md:mb-6 relative bg-white flex flex-col lg:flex-row items-center justify-between gap-10  max-w-5xl md:mx-auto px-6 py-10">
 
 
   <div class="object-contain md:hidden w-fit h-fit image"><%= image_tag 'book.jpg' %></div>
@@ -31,8 +31,8 @@
         </div>
 
       <div class="mt-4">
-          <%= form.label :service_id, "Select a service" %>
-          <%= form.collection_select :service_id, Service.all, :id, :title, class:"rounded-md shadow w-64" %>
+          <%= form.label :service_id, "Select a service"  %>
+          <%= form.collection_select :service_id, Service.all, :id, :title, class:"rounded-md shadow w-64 border border-2 h-24" %>
       </div>
 
       <div class="mt-4 mb-4">
@@ -45,7 +45,7 @@
   <% end %>  
 </div>
 
-  <div class=" hidden md:block object-contain image border rounded-md w-96"><%= image_tag 'book.jpg', class:"border rounded-md" %></div>
+  <div class=" hidden  image  "><%= image_tag 'book.jpg', class:"w-96 h-full border rounded-md" %></div>
 
 
 </div>
