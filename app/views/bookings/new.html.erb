@@ -1,14 +1,14 @@
 <%# <div class=" py-0 md:py-20 relative space-x-10 mb-4 p-0  md:mx-auto md:p-10 bg-white rounded-lg md:flex  w-96 md:w-2/3 h-full block  shadow-md "> %>
-<div class=" space-x-10 mb-0 md:mb-6 relative bg-white flex flex-col lg:flex-row items-center justify-between gap-10  max-w-5xl md:mx-auto px-6 py-10">
+<div class="  mb-0 md:mb-6 relative bg-white flex flex-col lg:flex-row items-center justify-center gap-10  max-w-5xl md:mx-auto px-6 py-10">
 
 
   <div class="object-contain md:hidden w-fit h-fit image"><%= image_tag 'book.jpg' %></div>
-  <div class=" md:absolute top-5 md:left-36 left-0">  
+  <div class=" md:absolute top-10 md:left-20 left-0">  
     <h1 class=" mt-2 pt-2 text-2xl font-medium text-gray-900">  Make your bookings</h1>
     <p class=" mt-2 font-medium">We are the best nail technician <br>in town let us work on your nails</p>
   </div>
   
-  <div  turbo-frame id="booking_form"class=" md:mx-auto mt-0 md:mt-10 md:pt-16 pt-0  ">
+  <div  turbo-frame id="booking_form"class=" pl-0 pl-6 md:mx-auto mt-0 md:mt-10 md:pt-16 pt-0  ">
     <%= form_with model: @booking, data: {turbo_frame: "_top" } do |form| %>
 
       
@@ -32,7 +32,7 @@
 
       <div class="mt-4">
           <%= form.label :service_id, "Select a service"  %>
-          <%= form.collection_select :service_id, Service.all, :id, :title, class:"rounded-md shadow w-64 border border-2 h-24" %>
+          <%= form.collection_select :service_id, Service.all, :id, :title, class:"  py-4 rounded-md  border border-red-400   shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500" %>
       </div>
 
       <div class="mt-4 mb-4">
@@ -40,12 +40,12 @@
           <%= form.datetime_select :date %>
           
       </div>
-        <%= form.submit "Book Now" , class:"w-64   md:w-80 rounded-lg py-3 px-8 mt-2 bg-black text-white inline-block font-medium cursor-pointer "%>
+        <%= form.submit "Book Now" , class:" shadow-lg transition-all w-64   md:w-80 rounded-lg py-3 px-8 mt-2 bg-pink-600 hover:bg-pink-700 text-white inline-block font-medium cursor-pointer "%>
 
   <% end %>  
 </div>
 
-  <div class=" hidden  image  "><%= image_tag 'book.jpg', class:"w-96 h-full border rounded-md" %></div>
+  <div class=" hidden md:flex image justify-center "><%= image_tag 'book.jpg', class:"w-4/5 h-auto border rounded-md" %></div>
 
 
 </div>

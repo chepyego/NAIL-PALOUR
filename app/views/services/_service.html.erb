@@ -1,10 +1,21 @@
-<div class="flex justify-center"id="<%= dom_id service %>">
-  <p class="my-5">
-     <%= image_tag service.image.variant(resize_to_limit: [300, 300]) if service.image.attached? %>
+<div class=""id="<%= dom_id service %>">
+  <p class="my-5 hover:bg-auto ">
+     <%= image_tag service.image.variant(resize_to_limit: [600, 600]) if service.image.attached? %>
+  </p>
+  <div class="flex items-center gap-3"> 
+    <p>
+     <%= link_to "Show this service", service, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    </p>
+
+    <p>
+    <%=  link_to 'Book this service', new_booking_path, class: "px-3 py-3 bg-pink-600 rounded-md shadow-md transition-all text-white hover:bg-pink-700" %>
+    </p> 
+  </div>
+
   </p>
   <p class="my-5">
     <strong class="block font-medium mb-1">Title:</strong>
-    <%= service.title %>
+    <span><%= service.title %></span>
   </p>
 
   <p class="my-5">

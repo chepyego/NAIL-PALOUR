@@ -11,7 +11,8 @@ class ServicesController < ApplicationController
 
   # GET /services/1 or /services/1.json
   def show
-    @others = Services.paginate(page: params[:page], per_page: 4).order("sort ASC")
+    @service = Service.find(params[:id])
+    # @service = Services.paginate(page: params[:page], per_page: 4).order("sort ASC")
   end
 
   # GET /services/new
@@ -53,12 +54,16 @@ class ServicesController < ApplicationController
 
   # DELETE /services/1 or /services/1.json
   def destroy
-    @service.destroy!
-
-    respond_to do |format|
-      format.html { redirect_to services_path, status: :see_other, notice: "Service was successfully destroyed." }
-      format.json { head :no_content }
+    @service = Service.find(params[:id])
+    if @service.present?
+       @service.destroy
+      redirect_to service_path, status: :see_other, notice: "Service was successfully destroyed"
     end
+
+    # respond_to do |format|
+    #   format.html { redirect_to services_path, status: :see_other, notice: "Service was successfully destroyed." }
+    #   format.json { head :no_content }
+    # end
   end
 
   private
