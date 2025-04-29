@@ -48,7 +48,7 @@
     </ul>
 </div>
 
-<div class=" mobile navigation mx-auto py-6">
+<div class=" mobile navigation mx-auto ">
 
   <div class="hidden sm:hidden">
        <%= 
@@ -61,10 +61,25 @@
   
         ] %>
   </div>
-  
-    <h1 class="absolute left-8 top-3 "><%= image_tag "LOGO3.png", class:" h-24 w-24 " %></h1>
+    <div class=" md:hidden flex items-center justify-between px-4 py-3 bg-peach-100">
+     <h1 class=" "><%= image_tag "LOGO3.png", class:" h-24 w-24 " %></h1>
+     <div class="relative " data-controller="drop">
+        <button type="button" data-action="click->drop#toggle click@window->drop#hide">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8 hover:text-pink-700">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+          </svg>
+        </button>
 
-   <%= select_tag nil, options_for_select(items, request.path), class: "sm:hidden  mt-8 w-80 border border-1 text-center py-2 bg-white", onChange: "Turbo.visit(this.selectedOptions[0].value)" %>
+        <div data-drop-target="menu" class="absolute right-0 mt-2 w-20 bg-white shadow-md rounded-md hidden">
+          <div class="py-1">
+            <%= link_to "Login", new_session_path, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" unless authenticated? %>
+            <%= button_to "Logout", session_path, method: :delete, class: "block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" if authenticated? %>
+            
+          </div>
+        </div>
+      </div>
+    </div>  
+   <%= select_tag nil, options_for_select(items, request.path), class: "sm:hidden rounded-md shadow-md mt-8 w-80 border text-center py-2 bg-white", onChange: "Turbo.visit(this.selectedOptions[0].value)" %>
 
   <ul class="hidden ">
       <% items.each do |text,path| %>
