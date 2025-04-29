@@ -1,5 +1,5 @@
 <div class=" p-10">
-    <ul class="hidden md:visible text-gray-600 text-lg font-light md:flex justify-center gap-10 px-8 py-4">
+    <ul class="hidden md:visible text-gray-600 text-lg font-light md:flex justify-center items-center gap-10 px-8 py-4">
             <h1 class="absolute left-10 top-3 "><%= image_tag "LOGO3.png", class:" h-24 w-24 " %></h1>
             
           <li class="md:hidden">
@@ -7,17 +7,17 @@
                <path fill-rule="evenodd" d="M2 2.75A.75.75 0 0 1 2.75 2h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 2.75Zm0 10.5a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75ZM2 6.25a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 6.25Zm0 3.5A.75.75 0 0 1 2.75 9h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 9.75Z" clip-rule="evenodd" />
             </svg>
           </li>
-        <li class="hover:bg-red-300"><%= link_to'HOME', root_path %></li>
-        <li class="hover:bg-red-300">ABOUT</li>
-        <li class="hover:bg-red-300">PAGES</li>
-        <li class="hover:bg-red-300"><%= link_to 'SERVICES', services_path %></li>
-        <li class="hover:bg-red-300">CONTACT US</li>
+        <li class="hover:text-red-300 transition duration-300 ease-in-out transform hover:translate-x-1"><%= link_to'HOME', root_path %></li>
+        <li class="hover:text-red-300 transition duration-300 ease-in-out transform hover:translate-x-1">ABOUT</li>
+        <li class="hover:text-red-300 transition duration-300 ease-in-out transform hover:translate-x-1">PAGES</li>
+        <li class="hover:text-red-300 transition duration-300 ease-in-out transform hover:translate-x-1"><%= link_to 'SERVICES', services_path %></li>
+        <li class="hover:text-red-300 transition duration-300 ease-in-out transform hover:translate-x-1">CONTACT US</li>
           
         <li><%= link_to 'BOOK NOW', new_booking_path, class:" bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-lg shadow-lg transition-all"%></li>
               
-                <li class="relative " data-controller="drop">
+                <li class="relative last:ml-36" data-controller="drop">
                     <button type="button" data-action="click->drop#toggle click@window->drop#hide">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8 ">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8 hover:text-pink-700">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                       </svg>
                     </button>
