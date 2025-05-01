@@ -72,4 +72,4 @@ end
 
 gem "tailwindcss-ruby", "~> 4.0"
 
-gem "tailwindcss-rails", "~> 4.2"
+gem "tailwindcss-rails", "~> 3.3.1"
