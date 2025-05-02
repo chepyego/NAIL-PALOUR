@@ -5,7 +5,7 @@ gem "rails", "~> 8.0.0"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use sqlite3 as the database for Active Record
-gem "sqlite"
+gem "sqlite3"
 # Gemfile
 gem "pg", group: :production
 
