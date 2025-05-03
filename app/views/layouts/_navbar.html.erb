@@ -79,7 +79,7 @@
         </div>
       </div>
     </div>  
-   <%= select_tag nil, options_for_select(items, request.path), class: "sm:hidden rounded-md shadow-md mt-8 w-80 border text-center py-2 bg-white", onChange: "Turbo.visit(this.selectedOptions[0].value)" %>
+   <%= select_tag nil, options_for_select(items, request.path), class: "sm:hidden flex justify-center items-center  shadow-md mt-8 w-full border text-center py-2 bg-white", onChange: "Turbo.visit(this.selectedOptions[0].value)" %>
 
   <ul class="hidden ">
       <% items.each do |text,path| %>

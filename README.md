@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+link to the website - https://nail-palour.onrender.com/
 
-Things you may want to cover:
+This is a nail palour booking web app that allows one to book either manicure or pedicure services.
 
-* Ruby version
+Requirements
 
-* System dependencies
+Ruby 3.2+
 
-* Configuration
+Rails 8
 
-* Database creation
+SQLite or MySQL
 
-* Database initialization
+How to get started:
 
-* How to run the test suite
+- clone the repo
 
-* Services (job queues, cache servers, search engines, etc.)
+- bundle install to install all the system gems
 
-* Deployment instructions
+- run all the migrations
 
-* ...
+- run bin/dev to start the server in development mode
+
+- Services (job queues, cache servers, search engines, etc.)
+
+- Deployment instructions
+
+- ...
