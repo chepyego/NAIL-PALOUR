@@ -4,6 +4,8 @@ set -o errexit
 bundle install
 bin/rails assets:precompile
 bin/rails assets:clean
+bin/rails db:seed
+
 
 # If you have a paid instance type, we recommend moving
 # database migrations like this one from the build command
