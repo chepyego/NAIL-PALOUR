@@ -1,3 +1,5 @@
+require 'dotenv/load' # ← This loads the .env file directly
+
 require_relative "boot"
 
 require "rails/all"

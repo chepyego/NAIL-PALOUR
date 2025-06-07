@@ -20,6 +20,20 @@ test:
   <<: *default
   database: storage/test.sqlite3
 
+production: &production
+  url: <%= ENV['DATABASE_URL'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+cable:
+  <<: *production
+cache:
+  <<: *production
+
+queue:
+  <<: *production
+
   # Store production database in the storage/ directory, which by default
   # is mounted as a persistent Docker volume in config/deploy.yml.
   # production:
@@ -38,10 +52,3 @@ test:
   #     <<: *default
   #     database: storage/production_cable.sqlite3
   #     migrations_paths: db/cable_migrate
-
-  production:
-
-  url: <%= ENV['DATABASE_URL'] %>
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
