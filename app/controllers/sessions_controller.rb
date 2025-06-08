@@ -6,6 +6,8 @@ class SessionsController < ApplicationController
   end
 
   def create
+      Rails.logger.info("PARAMS: #{params.inspect}")  # 🔍 Log the incoming parameters
+
     if user = User.authenticate_by(params.permit(:email_address, :password))
       start_new_session_for user
       session[:user_id] = user.id  # Manually ensure session is set
