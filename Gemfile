@@ -78,3 +78,9 @@ gem "tailwindcss-rails", "~> 4.2"
 gem "tailwindcss-ruby", "~> 4.0"
 
 gem 'dotenv-rails'
+
+gem "dockerfile-rails", ">= 1.7", :group => :development
+
+gem "litestream", "~> 0.14.0"
+
+gem "aws-sdk-s3", "~> 1.189", :require => false
