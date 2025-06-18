@@ -81,18 +81,18 @@
 
 </div>
 
-<div  data-controller="mobile-new" class="new Mobile navigation md:hidden flex ">
-   <div class=" flex justify-end items-center">
-     <h1 class=" "><%= image_tag "LOGO3.png", class:" h-24 w-24 " %></h1>
+<div  data-controller="mobile-new" class=" py-3 shadow-md new Mobile navigation md:hidden  ">
+   <div class=" flex justify-between mx-4 items-center">
+     <h1 class=" "><%= image_tag "LOGO3.png", class:" h-16 w-16 " %></h1>
       <svg data-action="click->mobile-new#toggle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
       </svg>
 
    </div>
 
-    <div >
-      <ul  data-mobile-new-target="menu2" class="hidden">
-        <li class="hover:text-red-300 transition duration-300 ease-in-out transform hover:translate-x-1"><%= link_to'HOME', root_path %></li>
+    <div  class="relative">
+      <ul  data-mobile-new-target="menu2" class="hidden m-4 bg-white absolute right-4 px-20 py-10">
+        <li class="hover:bg-red-300 transition duration-300 ease-in-out transform hover:translate-x-1"><%= link_to'HOME', root_path %></li>
         <li class="hover:text-red-300 transition duration-300 ease-in-out transform hover:translate-x-1"><%= link_to 'ABOUT US',about_us_path %></li>
         <li class="hover:text-red-300 transition duration-300 ease-in-out transform hover:translate-x-1">PAGES</li>
         <li class="hover:text-red-300 transition duration-300 ease-in-out transform hover:translate-x-1"><%= link_to 'SERVICES', services_path %></li>
