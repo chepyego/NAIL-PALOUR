@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root "home#index"
+  get "home#about_us", to: "home#about_us", as: :about_us
 
   get "bookings/:id/success", to: "bookings#success", as: "success_booking"
 end

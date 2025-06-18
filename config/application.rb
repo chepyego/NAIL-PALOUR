@@ -1,4 +1,4 @@
-require 'dotenv/load' # ← This loads the .env file directly
+require "dotenv/load" # ← This loads the .env file directly
 
 require_relative "boot"
 

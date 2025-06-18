@@ -1,4 +1,4 @@
-<div class="p-3  md:p-8 shadow">
+<div class="p-0  md:p-8 md:shadow">
     <ul class="hidden md:visible text-gray-600 text-lg font-light md:flex justify-center items-center gap-10 px-8 py-4">
             <h1 class="absolute left-10 top-3 "><%= image_tag "LOGO3.png", class:" h-24 w-24 " %></h1>
             
@@ -8,7 +8,7 @@
             </svg>
           </li>
         <li class="hover:text-red-300 transition duration-300 ease-in-out transform hover:translate-x-1"><%= link_to'HOME', root_path %></li>
-        <li class="hover:text-red-300 transition duration-300 ease-in-out transform hover:translate-x-1">ABOUT</li>
+        <li class="hover:text-red-300 transition duration-300 ease-in-out transform hover:translate-x-1"><%= link_to 'ABOUT US',about_us_path %></li>
         <li class="hover:text-red-300 transition duration-300 ease-in-out transform hover:translate-x-1">PAGES</li>
         <li class="hover:text-red-300 transition duration-300 ease-in-out transform hover:translate-x-1"><%= link_to 'SERVICES', services_path %></li>
         <li class="hover:text-red-300 transition duration-300 ease-in-out transform hover:translate-x-1">CONTACT US</li>
@@ -30,25 +30,12 @@
                       </div>
                     </div>
                  </li>
-
                 
-
-              
-              
-
-
-
-
-
-
-
-
-
-
+            <%# This is mobile navigation %>
     </ul>
 </div>
 
-<div class=" mobile navigation mx-auto ">
+<div class=" hidden mobile navigation mx-auto ">
 
   <div class="hidden sm:hidden">
        <%= 
@@ -81,18 +68,56 @@
     </div>  
    <%= select_tag nil, options_for_select(items, request.path), class: "sm:hidden flex justify-center items-center  shadow-md mt-8 w-full border text-center py-2 bg-white", onChange: "Turbo.visit(this.selectedOptions[0].value)" %>
 
-  <ul class="hidden ">
-      <% items.each do |text,path| %>
-          <li><%=  link_to text, path %></li>
+    <ul class="hidden ">
+        <% items.each do |text,path| %>
+            <li><%=  link_to text, path %></li>
 
-        <% end %>
+          <% end %>
 
-  </ul>
+    </ul>
 
    
 
 
+</div>
+
+<div  data-controller="mobile-new" class="new Mobile navigation md:hidden flex ">
+   <div class=" flex justify-end items-center">
+     <h1 class=" "><%= image_tag "LOGO3.png", class:" h-24 w-24 " %></h1>
+      <svg data-action="click->mobile-new#toggle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+
+   </div>
+
+    <div >
+      <ul  data-mobile-new-target="menu2" class="hidden">
+        <li class="hover:text-red-300 transition duration-300 ease-in-out transform hover:translate-x-1"><%= link_to'HOME', root_path %></li>
+        <li class="hover:text-red-300 transition duration-300 ease-in-out transform hover:translate-x-1"><%= link_to 'ABOUT US',about_us_path %></li>
+        <li class="hover:text-red-300 transition duration-300 ease-in-out transform hover:translate-x-1">PAGES</li>
+        <li class="hover:text-red-300 transition duration-300 ease-in-out transform hover:translate-x-1"><%= link_to 'SERVICES', services_path %></li>
+        <li class="hover:text-red-300 transition duration-300 ease-in-out transform hover:translate-x-1">CONTACT US</li>
+          
+              
+            <li class="relative last:ml-36" data-controller="drop">
+              <button type="button" data-action="click->drop#toggle click@window->drop#hide">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8 hover:text-pink-700">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+              </button>
+
+              <div data-drop-target="menu" class="absolute right-0 mt-2 w-20 bg-white shadow-md rounded-md hidden">
+                <div class="py-1">
+                  <%= link_to "Login", new_session_path, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" unless authenticated? %>
+                  <%= button_to "Logout", session_path, method: :delete, class: "block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" if authenticated? %>
+                  
+                </div>
+              </div> 
+          </li>    
+      <ul>                
+    </div>
+
+   
 
 
 </div>
-

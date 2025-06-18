@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   #  allow_unauthenticated_access only: %i[ index show ]
 
 
-  before_action :debug_session
+  # before_action :debug_session
   # before_action :set_current_user
   # before_action :authenticate_admin!
 
