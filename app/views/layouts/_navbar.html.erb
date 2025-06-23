@@ -1,7 +1,8 @@
 <div class="p-0  md:p-8 md:shadow">
     <ul class="hidden md:visible text-gray-600 text-lg font-light md:flex justify-center items-center gap-10 px-8 py-4">
+          <%= link_to root_path do %>
             <h1 class="absolute left-10 top-3 "><%= image_tag "LOGO3.png", class:" h-24 w-24 " %></h1>
-            
+          <% end %>  
           <li class="md:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
                <path fill-rule="evenodd" d="M2 2.75A.75.75 0 0 1 2.75 2h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 2.75Zm0 10.5a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75ZM2 6.25a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 6.25Zm0 3.5A.75.75 0 0 1 2.75 9h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 9.75Z" clip-rule="evenodd" />
@@ -83,7 +84,9 @@
 
 <div  data-controller="mobile-new" class=" py-3 shadow-md new Mobile navigation md:hidden  ">
    <div class=" flex justify-between mx-4 items-center">
-     <h1 class=" "><%= image_tag "LOGO3.png", class:" h-16 w-16 " %></h1>
+    <%= link_to root_path do %>
+      <h1 class=" "><%= image_tag "LOGO3.png", class:" h-16 w-16 " %></h1>
+    <% end %>
       <svg data-action="click->mobile-new#toggle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
       </svg>
