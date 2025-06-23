@@ -1,5 +1,6 @@
 # README
 
+live demo - https://nail-palour2-wispy-dew-7934.fly.dev/
 link to the website - https://nail-palour.onrender.com/
 
 This is a nail palour booking web app that allows one to book either manicure or pedicure services.
