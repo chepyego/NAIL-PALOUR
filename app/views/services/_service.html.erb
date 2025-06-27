@@ -1,31 +1,21 @@
-<div class=""id="<%= dom_id service %>">
-  <p class="my-5 hover:bg-auto ">
-     <%= image_tag service.image.variant(resize_to_limit: [600, 600]) if service.image.attached? %>
-  </p>
-  <div class="flex items-center gap-3"> 
-    <p>
-     <%= link_to "Show this service", service, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    </p>
+<div class="bg-white rounded-xl shadow-md overflow-hidden max-w-md mx-auto mb-8 p-6 transition-transform hover:scale-[1.02] duration-200" id="<%= dom_id service %>">
+  
+  <% if service.image.attached? %>
+    <%= image_tag service.image.variant(resize_to_limit: [600, 600]), class: "w-full h-64 object-cover rounded-md mb-4" %>
+  <% end %>
 
-    <p>
-    <%=  link_to 'Book this service', new_booking_path, class: "px-3 py-3 bg-pink-600 rounded-md shadow-md transition-all text-white hover:bg-pink-700" %>
-    </p> 
+  <h2 class="text-xl font-semibold text-gray-800 mb-2 capitalize"><%= service.title %></h2>
+
+  <p class="text-pink-600 font-semibold mb-2">KES <%= service.price %></p>
+
+  <p class="text-gray-700 mb-4 text-sm">
+    <strong class="font-medium block mb-1">Description:</strong>
+    <%= service.description.presence || "No description provided." %>
+  </p>
+
+  <div class="flex justify-between items-center mt-4 gap-3">
+    <%= link_to "Show this service", service, class: "px-4 py-2 bg-gray-100 text-gray-800 rounded-md text-sm font-medium hover:bg-gray-200 transition" %>
+    <%= link_to "Book this service", new_booking_path(service_id: service.id), class: "px-4 py-2 bg-pink-600 text-white rounded-md text-sm font-medium hover:bg-pink-700 shadow transition" %>
   </div>
-
-  </p>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Title:</strong>
-    <span><%= service.title %></span>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Price:</strong>
-    <%= service.price %>
-
-  </p>
-  <p>
-    <strong class="block font-medium mb-1">description:</strong>
-    <%= service.description %>
-  </p>
 
 </div>
