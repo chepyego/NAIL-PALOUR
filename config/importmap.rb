@@ -9,3 +9,5 @@ pin "trix"
 pin "@rails/actiontext", to: "actiontext.esm.js"
 pin "swiper", to: "https://ga.jspm.io/npm:swiper@11.2.6/swiper-bundle.esm.js"
 pin "stimulus-use" # @0.52.3
+pin "flatpickr" # @4.6.13
+pin "stimulus-flatpickr" # @3.0.0

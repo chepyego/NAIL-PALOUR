@@ -11,9 +11,18 @@
 
  /* @import 'swiper/swiper-bundle.min.css'; */
 
+ /*
+ *= require flatpickr
+*/
+
+
 body{
     /* background-color: #f6e6d6 ; banner color */
     background-color:  #f8efe8 
+}
+.mobile-bg{
+      background-color:  #f8efe8 
+
 }
 .image-banner{
     background-color: #f6e6d6 ;
