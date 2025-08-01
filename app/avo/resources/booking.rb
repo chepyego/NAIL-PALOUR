@@ -15,4 +15,9 @@ class Avo::Resources::Booking < Avo::BaseResource
     field :phone_number, as: :text
     field :status, as: :select, options: { pending: "Pending", confirmed: "Confirmed", completed: "Completed" }
   end
+  def scopes
+       scope :upcoming, name: "upcoming Bookings"
+
+  end
+
 end

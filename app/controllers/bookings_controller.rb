@@ -26,6 +26,8 @@ class BookingsController < ApplicationController
     end
 
     if @booking.save
+      BookingMailer.confirmed_booking(@booking).deliver_now
+      BookingMailer.admin_new_booking_notification(@booking).deliver_now
       flash[:notice] = "Booking was successful"
       redirect_to success_booking_path(@booking)
 
