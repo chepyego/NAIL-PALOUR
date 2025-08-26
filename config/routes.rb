@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   resources :services
   resources :bookings
 
+
+
+
+
+
     # constraints ->(request) { request.session[:user_id] && User.find_by(id: request.session[:user_id]&.admin?) } do
     # authenticate :user, ->(u) { u.admin? } do
 
@@ -13,6 +18,8 @@ Rails.application.routes.draw do
   # end
 
   # end
+  resource :sign_up
+
   resource :session
   resources :passwords, param: :token
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

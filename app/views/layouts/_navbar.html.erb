@@ -25,6 +25,8 @@
 
                     <div data-drop-target="menu" class="absolute right-0 mt-2 w-20 bg-white shadow-md rounded-md hidden">
                       <div class="py-1">
+                        <%= link_to "Sign up", sign_up_path, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" unless authenticated? %>
+
                         <%= link_to "Login", new_session_path, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" unless authenticated? %>
                         <%= button_to "Logout", session_path, method: :delete, class: "block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" if authenticated? %>
                         

@@ -5,14 +5,14 @@ class ApplicationController < ActionController::Base
 
 
   # before_action :debug_session
-  # before_action :set_current_user
+  before_action :set_current_user
+  helper_method :current_user
+
   # before_action :authenticate_admin!
 
 
 
-  def debug_session
-    Rails.logger.info "Session User ID: #{session[:user_id]}"
-  end
+
 
   include Authentication
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
@@ -25,7 +25,12 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    # ||= is a shorthand in Ruby. It means:Assign the right-hand side only if @current_user is nil or not already set.
+
     def set_current_user
       @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+    end
+    def current_user
+      @current_user
     end
 end
