@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   resources :services
   resources :bookings
 
+  namespace :settings do
+    resource :password, only: [ :show, :update ]
+    resource :profile, only: [ :show, :update ]
 
+    root to: redirect("/settings/profile")
+  end
 
 
 
