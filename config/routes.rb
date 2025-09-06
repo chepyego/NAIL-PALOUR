@@ -6,10 +6,17 @@ Rails.application.routes.draw do
   resources :bookings
 
   namespace :settings do
+    get "/", to: "dashboard#show", as: :root
+
     resource :password, only: [ :show, :update ]
     resource :profile, only: [ :show, :update ]
+    resource :user, only: [ :show, :destroy ]
 
-    root to: redirect("/settings/profile")
+    # root to: "dashboard/show"
+    # root to: redirect_to("/home/show")
+
+
+    # root to: redirect("/settings/profile")
   end
 
 

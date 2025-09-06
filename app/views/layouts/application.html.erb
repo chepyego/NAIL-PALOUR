@@ -45,9 +45,9 @@
 
     <%= render 'layouts/navbar' %>
     
-    <%# <%= render 'layouts/home' %> 
-        <%= yield %>
-        <%= render 'layouts/footer' %>
+      <%= content_for?(:content) ? yield(:content) : yield %>
+
+      <%= render 'layouts/footer' %>
 
 
 

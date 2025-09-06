@@ -1,0 +1,16 @@
+<%= content_for :content do %>
+ <section class="py-20 m-4  ">                                                                                                                                                                                                                               
+    <nav class="h-full w-2">
+        <h4 class="text-2xl text-gray-900 mb-2">Account Settings</h4>
+        <%= link_to "profile", settings_profile_path %><br>
+        <%= link_to "password", settings_password_path %><br>
+        <%= link_to "Account", settings_user_path %><br>
+
+    </nav>
+    <div>
+        <%= yield %>
+    </div>
+ </section>
+ <% end %>
+
+ <%= render template: "layouts/application" %>
