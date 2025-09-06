@@ -4,7 +4,7 @@ class SignUpsController < ApplicationController
 
       rate_limit to: 10, within: 3.minutes, only: :create, with: -> { redirect_to sign_up_path, alert: "Try again later." }
 
-    # allow_unauthenticated_access only: %i[show create]
+  # allow_unauthenticated_access only: %i[show create]
 
   def show
     if current_user
@@ -19,7 +19,7 @@ class SignUpsController < ApplicationController
     if @user.save
       start_new_session_for(@user)
       # session[:user_id] = @user.id  # Logs in the user
-      redirect_to root_path
+      redirect_to root_path, notice: "logged in succesfully"
     else
 
     redirect_to :show, status: :unprocessable_entity
