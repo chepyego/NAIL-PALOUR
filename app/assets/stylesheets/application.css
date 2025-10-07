@@ -18,10 +18,22 @@
 
 body{
     /* background-color: #f6e6d6 ; banner color */
-    background-color:  #f8efe8 
+    background-color:  #f8efe8 ;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
 }
+
+
 .mobile-bg{
       background-color:  #f8efe8 
+
+}
+
+.sign-up{
+    background-image: url('sign.jpg');
+    background-size: cover;
+    background-repeat: repeat;
 
 }
 .image-banner{
