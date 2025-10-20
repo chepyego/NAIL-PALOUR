@@ -30,7 +30,7 @@
 en:
   hello: "Hello world"
 
-  activerecord:
-  attributes:
-    user:
-      password_challenge: "Current password"
+  # activerecord:
+  # attributes:
+  #   user:
+  #     password_challenge: "Current password"
