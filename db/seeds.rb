@@ -10,6 +10,8 @@
 # Create an administrator account if it doesn't already exist.
 User.find_or_create_by!(email_address: "jchepyego@gmail.com") do |user|
   # Add the required name field, if your User model validates its presence.
+  user.first_name = "Admin1"
+  user.last_name = "Admin1"
 
   user.password = "jemimah21"
   # IMPORTANT: Password confirmation is required by most Rails authentication setups.
