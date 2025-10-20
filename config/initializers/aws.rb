@@ -1,6 +1,5 @@
 # config/initializers/aws.rb
 
-# 🛑 CRITICAL FIX: Explicitly require the core SDK library first.
 # This ensures the 'Aws' constant is defined before it's used.
 require "aws-sdk-core"
 
