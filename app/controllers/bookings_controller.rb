@@ -1,61 +1,62 @@
+# app/controllers/bookings_controller.rb
+
 class BookingsController < ApplicationController
-  # include Authentication
-
-  # before_action :user_login
-  allow_unauthenticated_access only: %i[ new index create destroy ]
-
+  # Only restrict index and destroy, allow new/create/success for guests
+  before_action :authenticate_user!, only: %i[ index destroy ]
+  # set_booking is only needed for actions that operate on an existing record
+  before_action :set_booking, only: %i[ success destroy ]
 
   def new
     @booking = Booking.new
   end
 
   def index
+    # Only show bookings for the logged-in user
     @bookings = current_user.bookings
   end
 
   def success
-    @booking = Booking.find(params[:id])
+    # @booking is set by set_booking
+    # You might want to add an authorization check here, e.g.,
+    # unless @booking.user == current_user
+    #   redirect_to root_path, alert: "Not authorized."
+    # end
   end
+
   def create
     if current_user
-
-       @booking = current_user.bookings.new(booking_params)
+       @booking = current_user.bookings.build(booking_params) # Use .build
     else
-
-    @booking = Booking.new(booking_params)
+       @booking = Booking.new(booking_params)
     end
 
     if @booking.save
-      BookingMailer.confirmed_booking(@booking).deliver_now
-      BookingMailer.admin_new_booking_notification(@booking).deliver_now
+      # BookingMailer.confirmed_booking(@booking).deliver_now
+      # BookingMailer.admin_new_booking_notification(@booking).deliver_now
       flash[:notice] = "Booking was successful"
       redirect_to success_booking_path(@booking)
-
     else
-      flash.now[:alert]= "something went wrong"
-      #  render :new, alert: "Something went wrong"
+      flash.now[:alert]= "Something went wrong. Please check the form."
+      render :new, status: :unprocessable_entity # Render new template to show errors
     end
   end
 
-  def destory
+  def destroy
+   # @booking is set by set_booking
+
    @booking.destroy
-   redirect_to bookings_path, notice: "Booking cancelled"
+   redirect_to bookings_path, notice: "Booking successfully cancelled."
   end
 
   private
 
   def booking_params
-  params.require(:booking).permit(:service_id, :date, :name, :email, :phone_number)
+    params.require(:booking).permit(:service_id, :date, :name, :email, :phone_number)
   end
 
-  def user_login
-    unless current_user
-      redirect_to login_path, alert: "You must login to access this feature"
-    end
+  def set_booking
+    @booking = Booking.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path, alert: "Booking not found."
   end
-
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-  end
-  helper_method :current_user  # Make available in views
 end
