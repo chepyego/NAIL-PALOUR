@@ -5,6 +5,8 @@ class BookingsController < ApplicationController
   before_action :authenticate_user!, only: %i[ index destroy ]
   # set_booking is only needed for actions that operate on an existing record
   before_action :set_booking, only: %i[ success destroy ]
+  allow_unauthenticated_access only: %i[ new create success]
+
 
   def new
     @booking = Booking.new
