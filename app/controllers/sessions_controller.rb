@@ -8,18 +8,23 @@ class SessionsController < ApplicationController
   def create
     # Rails.logger.info("PARAMS: #{params.inspect}")  # 🔍 Log the incoming parameters
 
-    # credentials = params.permit(:email_address, :password).to_h
+    credentials = session_params.to_h
 
-    if user = User.authenticate_by(email_address: params[:email_address], password: params[:password])
+    if user = User.authenticate_by(email_address: credentials[:email_address], password: credentials[:password])
       start_new_session_for user
       redirect_to after_authentication_url
     else
-      redirect_to new_session_path, alert: "Try another email address or password."
+          redirect_to new_session_path, alert: "Try another email address or password."
     end
   end
 
   def destroy
     terminate_session
     redirect_to new_session_path
+  end
+  private
+
+  def session_params
+     params.require(:session).permit(:email_address, :password)
   end
 end
