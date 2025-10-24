@@ -25,9 +25,9 @@ Avo.configure do |config|
   config.current_user_method do
     Current.user
   end
-  config.authenticate_with do
-    redirect_to "/" unless session[:user_id] == 1
-  end
+  # config.authenticate_with do
+  #   redirect_to "/" unless session[:user_id] == 1
+  # end
 
   ## == Authorization ==
   # config.is_admin_method = :is_admin
