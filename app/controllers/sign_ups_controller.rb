@@ -2,7 +2,7 @@ class SignUpsController < ApplicationController
     skip_before_action :set_current_user
       unauthenticated_access_only
 
-      rate_limit to: 10, within: 3.minutes, only: :create, with: -> { redirect_to sign_up_path, alert: "Try again later." }
+  # rate_limit to: 10, within: 3.minutes, only: :create, with: -> { redirect_to sign_up_path, alert: "Try again later." }
 
   # allow_unauthenticated_access only: %i[show create]
 
@@ -22,7 +22,7 @@ class SignUpsController < ApplicationController
       redirect_to root_path, notice: "logged in succesfully"
     else
 
-    redirect_to :show, status: :unprocessable_entity
+    render :show, status: :unprocessable_entity
     end
   end
 
