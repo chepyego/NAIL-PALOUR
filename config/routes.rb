@@ -19,6 +19,10 @@ Rails.application.routes.draw do
     # root to: redirect("/settings/profile")
   end
 
+   # admin panel
+   mount Avo::Engine, at: "/avo"
+
+
 
 
 
