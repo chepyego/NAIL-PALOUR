@@ -1,13 +1,45 @@
 <%= content_for :content do %>
- <section class="py-20 m-4  ">                                                                                                                                                                                                                               
-    <nav class="h-full w-2">
-        <h4 class="text-2xl text-gray-900 mb-2">Account Settings</h4>
-        <%= link_to "profile", settings_profile_path %><br>
-        <%= link_to "password", settings_password_path %><br>
-        <%= link_to "Account", settings_user_path %><br>
+ <section class=" flex py-8 m-4 bg-white rounded-md h-full ">                                                                                                                                                                                                                               
+    <nav class=" rounded-md shadow-2xl flex justify-center items-center w-96 h-full  pb-80 m-4 bg-gray-100 p-8">
+        <ul class="space-y-2 list-none p-0">
+            <li class="mb-4">
+                <h3 class="text-gray-800 text-lg font-semibold">GENERAL SETTINGS</h3>
+            </li>
+            <li class="hover:bg-teal-300">
+                <span class=" mt-4 rounded-md flex items-center">
+                    <div class="bg-white rounded-md h-8 w-8 flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="   size-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                        </svg>
+                    </div>
+                   <%= link_to "Profile", settings_profile_path, class: "block py-2 px-4 rounded-md hover:bg-teal-200 transition duration-150 ease-in-out" %>
+                </span>
+            </li>
+            <li class="mt-2 hover:bg-teal-300">
+                <span class="flex items-center mt-2">
+                    <div class="bg-white rounded-md w-8 h-8 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                        </svg>
+                    </div>
+                   <%= link_to "Password", settings_password_path, class: "block py-2 px-4 rounded-md hover:bg-teal-200 transition duration-150 ease-in-out" %>
+                </span>
+            </li>
 
+            <li class="hover:bg-teal-300">
+                <span class="flex items-center">
+                    <div class="bg-white rounded-md w-8 h-8 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                        </svg>
+                    </div>
+                    <%= link_to "Account", settings_user_path, class: "block py-2 px-4 rounded-md hover:bg-teal-200 transition duration-150 ease-in-out" %>
+                </span>
+            </li>
+            
+        </ul>
     </nav>
-    <div>
+    <div class="flex-1 p-4">
         <%= yield %>
     </div>
  </section>
