@@ -1,3 +1,15 @@
 <h1 class="text-center">Account</h1>
+<p class="flex justify-end">
+    <strong>total_bookings</strong> : <%= @total_bookings %>
+  </p>
+<p> My bookings</p> 
+
+ 
+<% @bookings.each do |booking| %>
+<p> 
+  <strong>Service:</strong> <%= booking.service.title %><br>
+  <strong>Date:</strong> <%= booking.date %><br>
+  <p>
+<% end %>
 
 <div class="flex justify-center text-white py-3 px-4 bg-red-600"><%= button_to "Delete my account", settings_user_path, method: :delete, data: { turbo_confirm: "Are you sure? This cannot be undone." } %></div>

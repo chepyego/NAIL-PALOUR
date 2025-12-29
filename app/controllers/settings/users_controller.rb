@@ -1,5 +1,15 @@
 class Settings::UsersController < Settings::BaseController
   def show
+    #  @bookings =  Booking.where(user_id: user.id)
+    @bookings = Current.user.bookings.includes(:service)
+
+    # SELECT COUNT(*) FROM bookings WHERE user_id = current_user
+    @total_bookings = Current.user.bookings.count
+    # @total_booking = Current.user.bookings.sum
+
+    # SELCT * FROM bookings WHERE user_id = 1;
+  end
+  def users_bookings
   end
 
   def destroy

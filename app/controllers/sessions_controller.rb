@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
     if user = User.authenticate_by(email_address: credentials[:email_address], password: credentials[:password])
       start_new_session_for user
-      redirect_to after_authentication_url
+      redirect_to dashboard_index_path
     else
           redirect_to new_session_path, alert: "Try another email address or password."
     end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "dashboard/index"
   resources :schedules
   resources :clients
   resources :manicurists
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
     resource :password, only: [ :show, :update ]
     resource :profile, only: [ :show, :update ]
     resource :user, only: [ :show, :destroy ]
+    # get
 
     # root to: "dashboard/show"
     # root to: redirect_to("/home/show")
