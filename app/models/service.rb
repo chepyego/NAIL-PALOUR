@@ -9,4 +9,10 @@ class Service < ApplicationRecord
   # :bookings
   has_many :bookings, inverse_of: :service, dependent: :destroy
   accepts_nested_attributes_for :bookings
+
+  scope :search, ->(query) {
+    return all if query.blank?
+
+    where("title ILIKE ?", "%#{query}%")
+   }
 end

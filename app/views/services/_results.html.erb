@@ -1,0 +1,11 @@
+
+<div>
+    <% if @results.present? %>
+        <% @results.each do |service| %>
+         <p><%= service.title %></p>
+         <%=  %>
+        <% end %>
+    <% else %>
+        <p> search not found</p>
+    <% end %>
+</div>

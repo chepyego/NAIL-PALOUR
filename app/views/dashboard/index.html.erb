@@ -1,16 +1,17 @@
 <div class="py-20 mx-auto">
+  <p> <%= @booking_grouping %></p>
 
-    <div class=" text-2xl text-center text-orange-300 mb-4">
-      <p class="">Total Bookings</p>
-      <p><%= @total_bookings %></p>
+    <div class=" text-2xl text-center text-red-300 mb-4 pb-6">
+      <p class="">Total Bookings: <%= @total_bookings %></p>
+      
     </div>
-    <p class="text-gray-900 text-center mb-4 text-2xl font-bold pb-8"> My bookings</p> 
+    <p class="text-red-300 text-center mb-4 text-2xl  pb-8"> Upcoming bookings</p> 
 
   <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     <% @bookings.each do |booking| %>
       <div  class=" bg-white rounded-xl shadow-md overflow-hidden max-w-md mx-auto mb-8 p-6 transition-transform hover:scale-[1.02] duration-200"> 
 
-       <p><strong>Service:</strong> <%= booking.service.title %><br><br></p>
+       <p>💅  <%= booking.service.title %><br><br></p>
         <p class="flex items-center text-red-400 ">
           <span class="h-4 w-4 mr-2 ">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="text-red-400 size-2">

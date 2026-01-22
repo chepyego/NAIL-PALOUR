@@ -3,7 +3,13 @@ Rails.application.routes.draw do
   resources :schedules
   resources :clients
   resources :manicurists
-  resources :services
+
+  resources :services do
+    collection do
+      get :search
+    end
+  end
+
   resources :bookings
 
   namespace :settings do
@@ -54,6 +60,9 @@ Rails.application.routes.draw do
   root "home#index"
   get "home#about_us", to: "home#about_us", as: :about_us
   get "home#contact_us", to: "home#contact_us", as: :contact_us
+
+  # get "services/search", to: "services#search", as: :search_services
+
 
   get "bookings/:id/success", to: "bookings#success", as: "success_booking"
 end
