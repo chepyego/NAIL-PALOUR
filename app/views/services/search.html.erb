@@ -1,9 +1,10 @@
-<div>
+<div class="my-12">
     <% if @results.present? %>
         <% @results.each do |service| %>
-         <p><%= service.title %></p>
+        <%= render service %><br>
         <% end %>
     <% else %>
         <p> search not found</p>
     <% end %>
 </div>
+
